@@ -593,15 +593,47 @@
         </div>
         <div style="background:#2a2a2a;border:1px solid #333;" class="p-8">
           <h3 class="font-playfair text-2xl font-bold text-white mb-6">Request a Callback</h3>
-          <form action="https://formspree.io/f/mgobpdyw" method="POST" class="space-y-4">
-            <input type="hidden" name="_subject" value="New Enquiry - Advanced Craft Contracts" />
-            <input type="hidden" name="_next" value="https://advancedcraftjoiners.github.io/advanced-craft-contracts/thank-you.html" />
+          <form id="acc-contact-form" class="space-y-4">
+            <input type="hidden" name="_subject" value="New Enquiry - Advanced Craft Contracts" />
             <div><label class="block font-inter text-xs uppercase tracking-wider text-gray-400 mb-2">Full Name</label><input type="text" name="name" placeholder="Your name" style="background:#1e1e1e;border:1px solid #444;" class="w-full px-4 py-3 font-inter text-sm text-white placeholder-gray-600 focus:outline-none focus:border-gold transition-colors" /></div>
             <div><label class="block font-inter text-xs uppercase tracking-wider text-gray-400 mb-2">Email Address</label><input type="email" name="email" placeholder="your@email.com" style="background:#1e1e1e;border:1px solid #444;" class="w-full px-4 py-3 font-inter text-sm text-white placeholder-gray-600 focus:outline-none focus:border-gold transition-colors" /></div>
             <div><label class="block font-inter text-xs uppercase tracking-wider text-gray-400 mb-2">Phone Number</label><input type="tel" name="phone" placeholder="Your phone number" style="background:#1e1e1e;border:1px solid #444;" class="w-full px-4 py-3 font-inter text-sm text-white placeholder-gray-600 focus:outline-none focus:border-gold transition-colors" /></div>
             <div><label class="block font-inter text-xs uppercase tracking-wider text-gray-400 mb-2">Tell Us About Your Project</label><textarea name="message" rows="4" placeholder="Brief description..." style="background:#1e1e1e;border:1px solid #444;" class="w-full px-4 py-3 font-inter text-sm text-white placeholder-gray-600 focus:outline-none focus:border-gold transition-colors resize-none"></textarea></div>
-            <button type="submit" class="w-full bg-gold hover:bg-gold-light text-black py-4 uppercase tracking-widest font-inter text-xs font-bold transition-all duration-300">Send Message</button>
+            <button type="submit" id="acc-submit-btn" class="w-full bg-gold hover:bg-gold-light text-black py-4 uppercase tracking-widest font-inter text-xs font-bold transition-all duration-300">Send Message</button>
           </form>
+          <script>
+          (function(){
+            var form=document.getElementById('acc-contact-form');
+            if(!form)return;
+            form.addEventListener('submit',function(e){
+              e.preventDefault();
+              var btn=document.getElementById('acc-submit-btn');
+              var orig=btn.textContent;
+              btn.textContent='Sending...';
+              btn.disabled=true;
+              btn.style.opacity='0.7';
+              fetch('https://formspree.io/f/mgobpdyw',{
+                method:'POST',
+                body:new FormData(form),
+                headers:{'Accept':'application/json'}
+              }).then(function(r){
+                if(r.ok){
+                  window.location.href='https://advancedcraftjoiners.github.io/advanced-craft-contracts/thank-you.html';
+                }else{
+                  btn.textContent=orig;
+                  btn.disabled=false;
+                  btn.style.opacity='';
+                  alert('Something went wrong. Please call us on 0800 073 8818.');
+                }
+              }).catch(function(){
+                btn.textContent=orig;
+                btn.disabled=false;
+                btn.style.opacity='';
+                alert('Something went wrong. Please call us on 0800 073 8818.');
+              });
+            });
+          })();
+          </script>
         </div>
       </div>
     </div>

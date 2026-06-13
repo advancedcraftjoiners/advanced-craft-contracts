@@ -5,6 +5,25 @@
 
 ---
 
+## GITHUB PUSH WORKFLOW
+
+To push changes to GitHub:
+
+1. Go to https://github.com/settings/tokens/new
+2. Note: ACC Push — tick repo checkbox — click Generate token
+3. Copy the token (starts with ghp_)
+4. Run these commands in PowerShell:
+   ```
+   git add .
+   git commit -m "describe your changes here"
+   git push https://YOUR_TOKEN@github.com/advancedcraftjoiners/advanced-craft-contracts.git main
+   ```
+5. Delete the token immediately at https://github.com/settings/tokens
+
+**IMPORTANT: Always delete token after every push. Never reuse a token.**
+
+---
+
 ## Project Overview
 
 Static HTML website for **Advanced Craft Contracts Ltd**, a building and renovation company operating across Edinburgh, Glasgow, and Scotland. All pages are single-file static HTML using Tailwind CSS via CDN — no build tools, no external JS frameworks.
