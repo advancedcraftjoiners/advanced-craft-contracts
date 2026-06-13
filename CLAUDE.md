@@ -36,7 +36,7 @@ Static HTML website for **Advanced Craft Contracts Ltd**, a building and renovat
 |-----------|--------------------------------------------|
 | Freephone | 0800 073 8818 (`tel:08000738818`)          |
 | Mobile    | 07542 389947 (`tel:07542389947`)           |
-| Email     | advancedcraftcontracts@outlook.com         |
+| Email     | info@advancedcraftcontracts.co.uk         |
 | Social    | Facebook + Instagram (external links)      |
 
 ---
@@ -103,8 +103,8 @@ Dark background (`#0f0f0f`), three items: Freephone, Mobile, Email. "Get a Free 
       <a href="tel:07542389947" class="flex items-center gap-1.5 hover:text-gold transition-colors">
         <span class="font-bold text-gold">Mobile:</span>&nbsp;07542 389947
       </a>
-      <a href="mailto:advancedcraftcontracts@outlook.com" class="flex items-center gap-1.5 hover:text-gold transition-colors">
-        advancedcraftcontracts@outlook.com
+      <a href="mailto:info@advancedcraftcontracts.co.uk" class="flex items-center gap-1.5 hover:text-gold transition-colors">
+        info@advancedcraftcontracts.co.uk
       </a>
     </div>
     <a href="index.html#contact" class="bg-gold hover:bg-gold-light text-black px-4 py-1.5 uppercase tracking-widest text-xs font-bold transition-all whitespace-nowrap">Get a Free Quote</a>
@@ -445,11 +445,11 @@ The contact form on `index.html` is wired up and ready but uses a placeholder:
 `action="https://formspree.io/f/YOUR_FORM_ID"`
 
 To activate it:
-1. Go to **https://formspree.io** and sign up (use advancedcraftcontracts@outlook.com)
+1. Go to **https://formspree.io** and sign up (use info@advancedcraftcontracts.co.uk)
 2. Click **New Form**, give it a name (e.g. "ACC Website")
 3. Copy the 8-character Form ID shown (e.g. `xpzgkpzl`)
 4. In `index.html`, find `YOUR_FORM_ID` and replace it with your actual ID
-5. Test by submitting the form — you'll receive an email at advancedcraftcontracts@outlook.com
+5. Test by submitting the form — you'll receive an email at info@advancedcraftcontracts.co.uk
 
 ### Remaining recommended steps
 1. **Real photography** — all images are Unsplash stock photos. Replace with actual project photography when available.
